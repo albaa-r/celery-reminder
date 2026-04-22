@@ -40,7 +40,7 @@ services:
 
   worker:
     build: .
-    command: celery -A app.celery_app worker --loglevel=info --concurrency = 4
+    command: celery -A app.celery_app worker --loglevel=info --pool=threads --concurrency=4
     volumes:
       - .:/app
     depends_on:
